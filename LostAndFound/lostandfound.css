@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 15, 2017, 5:58:38 PM
+    Author     : samru
+*/
+hi,h2,h3,body,head,body 
+
+{
+    background-color: lightblue;
+}
+
+.bg { 
+    
+    background-image: url("towson2.jpg");
+
+    
+    height: 100%; 
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
