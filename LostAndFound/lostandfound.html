@@ -15,6 +15,10 @@
       border-radius: 0;
     }
     
+    .navbar-nav {
+        padding-left: 20px;
+        padding-top: 10px;
+    }
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height: 450px}
     
@@ -161,6 +165,19 @@
                 function search(){
                     var searchfield = document.getElementById('searchbar').value;
                     alert("You searched "+searchfield);
+
+                    
+                    $.ajax({
+                        data: "text=" + searchfield,
+                        url: "search.php",
+                        method: 'POST',
+                        success: function(msg) {
+                            alert(msg);
+                        }
+                        
+                        
+                    });
+                    
                 }
             </script>
         </ul>
