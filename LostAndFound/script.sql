@@ -16,6 +16,7 @@ create table items (
     imgPath varchar(255) not null,
     turnedIn date, #date turned into the desk
     location varchar(255), #keeping it a string clean on php side
+    dibs	 boolean	NOT NULL default 0,
     fulltext(description, location)
     );
 
@@ -32,4 +33,5 @@ values ('Set of Ford keys', 'keyfob.jpg', '2017-11-15', 'York'),
        ('Beige/Tan jacket', 'jacket.jpg', '2017-11-5', 'Van Bokkelen'),
        ('Silver Acer laptop', 'Acer.jpg', '2017-11-14', 'Liberal Arts'),
        ('Black briefcase with a silver lock', 'briefcase.jpg', '2017-11-9', 'Cook Library'),
-       ('Black Nike hoodie', 'hoodie.jpg', '2017-11-5', 'Union');
+       ('Black Nike hoodie', 'hoodie.jpg', '2017-11-5', 'Union'),
+       ('Black water bottle', 'bottle.jpg', '2017-12-2', 'York');

@@ -159,13 +159,19 @@
                         <li>
                             <label for="search" class="ui-hidden-accessible"><br></label>
                             <input type="text" name="search" id="searchbar" placeholder="Search">
-                            <button type="submit" class="btn btn-default" onclick="search()"><span class="glyphicon glyphicon-search"></span></button>
+                            <button type="submit" id="searchbutton" class="btn btn-default" onclick="search()"><span class="glyphicon glyphicon-search"></span></button>
                         </li>
                         <script>
+                            document.getElementById("searchbar")
+                                        .addEventListener("keyup", function (event) {
+                                            event.preventDefault();
+                                            if (event.keyCode === 13) {
+                                                document.getElementById("searchbutton").click();
+                                            }
+                                        });
                             function search() {
+                                
                                 var searchfield = document.getElementById('searchbar').value;
-                                alert("You searched " + searchfield);
-
 
                                 $.ajax({
                                     data: "text=" + searchfield,
@@ -254,12 +260,13 @@
             </div>
 
         </div>
-        <div class="container-fluid" id="box">    
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <center><h2>TOWSON UNIVERSITY LOST AND FOUND</h2></center>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <center><h2>TOWSON UNIVERSITY LOST AND FOUND</h2></center>
             </div>
+        </div>
+        <div class="container-fluid" id="box">    
+
             <div class ="row justify-content-between" align="center">
                 <a class ="col-3 btn btn-primary" href="#" role="button" id="img1" onclick="dibsPopUp1()">
                     <span class="dibs" id="dibs1">Click me to dibs</span>

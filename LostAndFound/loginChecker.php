@@ -21,7 +21,7 @@ if (isset($_POST['submit']))
         }
             $name = $_POST['user'];
             $pass = $_POST['passw'];
-            $sqlLogin = "select * from users where('admin' = userName && sha2('admin',256) = pass)";
+            $sqlLogin = "select * from users where(admin = " . $name . " && sha2('admin',256) = pass)";
             $result = $conn->query($sqlLogin);
             if(mysqli_num_rows($result) > 0){
                  $row = mysqli_fetch_assoc($result);
