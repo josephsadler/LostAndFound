@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="lostfound.css">
+  <link rel="stylesheet" href="lostandfound.css">
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -52,6 +52,10 @@
       }
       .row.content {height:auto;} 
     }
+    table, tr, th, td {
+        border: 1px solid #e3e3e3;
+        padding: 10px;
+     }
   </style>
   
   <style>
@@ -105,7 +109,7 @@
   
 </head>
  
-<body background="towson2.jpg">
+<body>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -153,94 +157,148 @@
       <div class="col-12">
           <center><h2>TOWSON UNIVERSITY LOST AND FOUND</h2></center>
       </div>
-  </div>
-    <div class ="row justify-content-between" align="center">
-        <a class ="col-3 btn btn-primary" href="#" role="button" id="img1" onclick="dibsPopUp1()">
-            <span class="dibs" id="dibs1">Click me to dibs</span>
-            <div>
-                <img src="catImage1.jpg" alt="Image 1" height="195" width="195">
-                <p><br>Hey I describe the image 1</p>
-            </div>
-            
-        </a>
-        <a class ="col-3 btn btn-primary" href="#" role="button" id="img2">
-            <span class="dibs" id="dibs1">Click me to dibs</span>
-           <div>
-                <img src="catImage2.jpg" alt="Image 2" height="195" width="195">
-                <p><br>Hey I describe the image 2</p>
-            </div>
-        </a>
-        <a class ="col-3 btn btn-primary" href="#" role="button" id="img3">
-            <span class="dibs" id="dibs1">Click me to dibs</span>
-            <div>
-                <img src="catImage3.jpg" alt="Image 3" height="195" width="195">
-                <p><br>Hey I describe the image 3</p>
-            </div>
-        </a>
-         
-        
-    </div>
-    <br>
-    <div class ="row justify-content-between" align="center">
-        <a class ="col-3 btn btn-primary" href="#" role="button" id="img4">
-            <span class="dibs" id="dibs1">Click me to dibs</span>
-            <div>
-                
-                <img src="catImage4.jpg" alt="Image 5" height="195" width="195">
-                <p><br>Hey I describe the image 4</p>
-            </div>
-            
-        </a>
-        <a class ="col-3 btn btn-primary" href="#" role="button" id="img5">
-            <span class="dibs" id="dibs1">Click me to dibs</span>
-           <div>
-                <img src="catImage5.jpg" alt="Image 5" height="195" width="195">
-                <p><br>Hey I describe the image 5</p>
-            </div>
-        </a>
-        <a class ="col-3 btn btn-primary" href="#" role="button" id="img6">
-            <span class="dibs" id="dibs1">Click me to dibs</span>
-            <div>
-                <img src="catImage6.jpg" alt="Image 6" height="195" width="195">
-                <p><br>Hey I describe the image 6</p>
-            </div>
-        </a>
-        <script>
-    function dibsPopUp1(){
-        var dibs1 = document.getElementById("img1");
-        dibs1.classList.toggle("show");
-    }
-    function dibsPopUp2(){
-        var dibs2 = document.getElementById("img2");
-        dibs2.classList.toggle("show");
-    }
-    function dibsPopUp3(){
-        var dibs3 = document.getElementById("img3");
-        dibs3.classList.toggle("show");
-    }
-    function dibsPopUp4(){
-        var popup4 = document.getElementById("img4");
-        popup4.classList.toggle("show");
-    }
-    function dibsPopUp5(){
-        var popup5 = document.getElementById("img5");
-        popup5.classList.toggle("show");
-    }
-    function dibsPopUp6(){
-        var popup6 = document.getElementById("img6");
-        popup6.classList.toggle("show");
-    }
-    
-    </script>
-    </div>
+      
+      
+      
+      
+      
+   
+   
+   
+ <!--  <div id = "create" style="display:none"> -->  
+<!--    <h3>Create new item</h3> -->
+<!--    <p><strong>Please fill in the form and click save.</strong></p> -->
+<!--    <div id="message"></div> -->
+<!--     <form name='form1'> -->
+<!--       <table align = ""> -->
+<!--         <tr><td></td></tr> -->
+<!--          <tr> -->
+<!--             <td> -->
+<!--               <label>Item Name:</label>&nbsp; -->
+<!--             </td> -->
+<!--             <td> -->
+<!--               <input type='text' placeholder='Item Name' name='description' id= 'description' required ><br /> -->
+<!--             </td> -->
+<!--           </tr> -->
+<!--           <tr> -->
+<!--             <td> -->
+<!--                 <label>Location:</label>&nbsp; -->
+<!--             </td> -->
+<!--             <td> -->
+<!--               <input type='text' placeholder='Location' name='location' id='location' required ><br /> -->
+<!--             </td> -->
+<!--           </tr> -->
+<!--           <tr> -->
+<!--             <td> -->
+<!--               <label>Date Turned In:</label>&nbsp; -->
+<!--             </td> -->
+<!--             <td> -->
+<!--               <input type='date' name='turnedIn' placeholder='Date Turned In' id='turnedIn' required ><br /> -->
+<!--             </td> -->
+<!--           </tr> -->
+<!--           <tr> -->
+<!--             <td>&nbsp;</td> -->
+<!--             <td> -->
+<!--               <input class='btn' type="button" id = "saveitem" value = "Save" /> -->
+<!--             </td> -->
+<!--           </tr> -->
+<!--         </table> -->
+<!--     </form> -->
+<!--   </div> -->
+  
+  <button id="showcreate" onclick="location.href='create_item.html'">Create Item</button>
+  
+<!-- <!--   <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+<!-- <!--   <script type="text/javascript"> -->
+<!-- //     $(function(){ -->
+<!-- //         $("#saveitem").on('click', function(){ -->
+<!-- //             var description  = $("#description").val(); -->
+<!-- //             var location   = $("#location").val(); -->
+<!-- //             var turnedIn       = $("#turnedIn").val(); -->
 
+<!-- //             $.ajax({ -->
+<!-- //               method: "POST", -->
+<!-- //               url:    "save_info.php", -->
+<!-- //               data: { "description": description, "location": location, "turnedIn": turnedIn}, -->
+<!-- //              }).done(function( data ) { -->
+<!-- //                 var result = $.parseJSON(data); -->
+<!-- //                 var str = ''; -->
+<!-- //                 var cls = ''; -->
+<!-- //                 if(result == 1) { -->
+<!-- //                   str = 'User record saved successfully.'; -->
+<!-- //                   cls = 'success'; -->
+<!-- //                 }else if( result == 2) { -->
+<!-- //                   str = 'All fields are required.'; -->
+<!-- //                   cls = 'error'; -->
+<!-- //                 }else{ -->
+<!-- //                   str = 'User data could not be saved. Please try again'; -->
+<!-- //                   cls = 'error'; -->
+<!-- //                 } -->
+<!-- //               $("#message").show(3000).html(str).addClass('success').hide(5000); -->
+<!-- //           }); -->
+<!-- //        }); -->
+<!-- //      }); -->
+
+<!--   </script> -->
+  
+  
+      
+      
+      
+      
+      
+
+<div class = "container" > 
+
+        <h3><u>Lost Items Submitted</u></h3>
+
+        <p><strong>Click on the button to display lost items.</strong></p> 
+        
+        <div id="item"></div>  
+    </div> 
+
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+   
+    <script type="text/javascript"> 
+
+         $(function(){ 
+
+//           $("#getitems").on('click', function(){ 
+	$(document).ready(function () {
+
+          $.ajax({ 
+
+            method: "GET", 
+            
+            url: "get_info.php",
+
+          }).done(function(data) { 
+
+            var result= $.parseJSON(data); 
+
+            var string='<table width="100%"><tr> <th>#</th><th>Item</th> <th>Location</th> <th>Date Turned In</th></tr>';
+     
+           /* from result create a string of data and append to the div */
+          
+            $.each(result, function(key, value) { 
+              
+			string += "<tr> <td>" + value['itemID'] + "</td> <td>" + value['description'] + "</td> <td>" + value['location'] + "</td> <td>" + value['turnedIn'] + "</td> </tr>"; 
+                  }); 
+
+                 string += '</table>'; 
+
+              $("#item").html(string); 
+           }); 
+        }); 
+    }); 
+    </script> 
+    
+      </div>
     <button data-inline="true" id="next">Next</button>
 </div>
-    
-    
 
 <footer class="container-fluid text-center">
-  <p>This is Towson University lost and found web page</p>
+  <p>This is Towson University's lost and found admin page</p>
 </footer>
 </body>
 </html>
