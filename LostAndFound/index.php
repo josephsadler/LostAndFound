@@ -7,7 +7,7 @@
         if(isset($_SESSION['login_user'])){
         if($_SESSION['login_user'] != "no user found" || $_SESSION['login_user'] != "invalid username or password"){
             echo $_SESSION['login_user'];
-                     header("Location:adminPage.php");
+                     header("Location:admin/adminPage.php");
                     exit();
                 }
 	}
