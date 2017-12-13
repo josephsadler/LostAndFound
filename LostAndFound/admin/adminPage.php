@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+
 <?php
 session_start();
-include ('logout.php');
-echo $_SESSION['login_user'];
-if (isset($_SESSION['login_user'])) {
-    if ($_SESSION['login_user'] == "logout") {
-        session_unset();
-        header("Location:index.php");
-        exit();
-    }
-}
+// include ('logout.php');
+// echo $_SESSION['login_user'];
+// if (isset($_SESSION['login_user'])) {
+//     if ($_SESSION['login_user'] == "logout") {
+//         session_unset();
+//         header("Location:index.php");
+//         exit();
+//     }
+// }
 ?>
 <html lang="en">
 <head>
@@ -22,7 +22,8 @@ if (isset($_SESSION['login_user'])) {
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="lostandfound.css">
+<link rel="stylesheet"
+	href="/LostAndFound/LostAndFound/lostandfound.css">
 <style>
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
@@ -198,7 +199,7 @@ to {
 						<h2 align="center">Admin Page</h2>
 						<div class="pull-right">
 							<button class="btn btn-success" data-toggle="modal"
-								data-target="#add_new_record_modal">Create Item</button>
+								data-target="#add_new_item_modal">Create Item</button>
 						</div>
 					</div>
 				</div>
@@ -206,13 +207,13 @@ to {
 					<div class="col-md-12">
 						<h4>Current Items:</h4>
 						<script>readItems();</script>
-						<div class="records_content"></div>
+						<div class="items_content"></div>
 					</div>
 				</div>
 			</div>
 
 			<!-- Modal to add new item-->
-			<div class="modal fade" id="add_new_record_modal" tabindex="-1"
+			<div class="modal fade" id="add_new_item_modal" tabindex="-1"
 				role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
@@ -221,7 +222,7 @@ to {
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<h4 class="modal-title" id="myModalLabel">Add New Record</h4>
+							<h4 class="modal-title" id="myModalLabel">Create New Item</h4>
 						</div>
 						<div class="modal-body">
 
@@ -250,6 +251,53 @@ to {
 					</div>
 				</div>
 			</div>
+			<!-- End of modal -->
+
+
+			<!-- Modal - Update item details -->
+			<div class="modal fade" id="update_item_modal" tabindex="-1"
+				role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">Update</h4>
+						</div>
+						<div class="modal-body">
+
+							<div class="form-group">
+								<label for="update_description">Description</label> <input
+									type="text" id="update_description" placeholder="Description"
+									class="form-control" />
+							</div>
+
+							<div class="form-group">
+								<label for="update_location">Location</label> <input
+									type="text" id="update_location" placeholder="Location"
+									class="form-control" />
+							</div>
+
+							<div class="form-group">
+								<label for="update_turnedIn">Date Turned In</label> <input
+									type="text" id="update_turnedIn" placeholder="Date Turned In"
+									class="form-control" />
+							</div>
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-primary"
+								onclick="updateItemDetails()">Save Changes</button>
+							<input type="hidden" id="hidden_item_id">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End of modal -->
 
 		</div>
 	</div>
